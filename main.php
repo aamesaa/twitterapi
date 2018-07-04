@@ -35,12 +35,11 @@ include_once("include/twitteroauth.php");
     $oauth_token_secret = $_SESSION['request_vars']['oauth_token_secret'];
 
     $settings = array(
-        'oauth_access_token' => "981450978133032961-lsjyj5bKqF1NrbfFlRxYQdfLTC6jnX1",
-        'oauth_access_token_secret' => "IrmVprrdNzjdTNuJaDsfYtaCJ7E1zXS5bQlBYgcs9iCh1",
-        'consumer_key' => "C7VSn0nf9hXfmE2k9IptG0bze",
-        'consumer_secret' => "bdjOUsa7hxIgFkecJZnm4VuDIdcgsWmWvi1IBFQ53YF400GBRK"
+        'oauth_access_token' => "75233001-osAxBXJ6YrXgMcWLeAi7TduoLqaIq02T5MeVOJGzu",
+        'oauth_access_token_secret' => "HkT6YmNGDZJbIutfx2HFSXjGWggkocLRvKtoMgIpu4ryK",
+        'consumer_key' => "E3zTGculcU0BJbvZVT0zBUOEB",
+        'consumer_secret' => "Zj8x110ohTG9Ussn5quo3OrthPjURU4n5Z64P7YoFqJX1gqoGq"
     );
-
 
 
     ?>
@@ -69,7 +68,7 @@ include_once("include/twitteroauth.php");
                 echo ' Welcome,<i><b>' . $screenname .'</i></b> ';
 
                 //log out
-                echo '<a class="btn btn-outline-primary btn-sm" href="lagout.php">Logout</a>';
+                echo '<a class="btn btn-outline-primary btn-sm" href="logout.php">Logout</a>';
                 //echo '<button type="button" class="btn btn-outline-danger"><a href="logout.php" >Logout</a></button>';
                 echo "<br><hr>";
                 echo "<hr>";
@@ -112,7 +111,8 @@ include_once("include/twitteroauth.php");
 
                                 if ($mediaTweet != '')
                                 {
-                                    echo '<img id="myImg" class="img-thumbnail mx-auto d-block" src='. $mediaTweet .' class="img-rounded" alt="image tweet" width="50%"></img>';
+                                    echo '<img class="myImg" id="myImg" class="img-thumbnail mx-auto d-block" src='. $mediaTweet
+                                    .' class="img-rounded" alt="image tweet" width="50%"></img>';
                                     echo "<i> gambar : " . $mediaTweet ."</i></br>";
                                 }
                                 else
@@ -163,6 +163,15 @@ include_once("include/twitteroauth.php");
             modalImg.src = this.src;
             captionText.innerHTML = this.alt;
         }
+
+        //var captionText = document.getElementById("caption");
+        for(j=0;j<i;j++) {
+            img[j].onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+          //  captionText.innerHTML = this.alt;
+        }
+
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
